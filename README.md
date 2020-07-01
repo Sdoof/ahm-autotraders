@@ -26,7 +26,7 @@ Acquires underpriced assets from a private market and resells them at fair marke
 #### Noise trading bot
 Maintains optimal asset holdings while profiting from volatility in asset prices.
 
-Each interval, the bot places a buy/sell order, depending on whether asset holdings are above or below the optimal level. A (95% default) confidence interval for the asset's price is generated using the Student t distribution, where μ is the [EMA](https://www.investopedia.com/terms/e/ema.asp) of price:
+Each interval, the bot places a buy/sell order, depending on whether asset holdings are above or below the optimal level. A (60% default) confidence interval for the asset's price is generated using the Student t distribution, where μ is the [EMA](https://www.investopedia.com/terms/e/ema.asp) of price:
 
 <img src="https://latex.codecogs.com/gif.latex?\mu_n=\lambda%20p_n+(1-\lambda)\mu_{n-i}"/> 
 

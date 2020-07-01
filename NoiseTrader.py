@@ -38,8 +38,8 @@ class DSBot(Agent):
         # TRADE LOGIC
         # time decay factor, value * time_decay_factor ^ time_elapsed_since_ob
         self._TIME_DECAY_FACTOR = 0.8
-        # confidence level of interval; lower confidence leads to more completed trades with smaller profit per trade
-        self._CONFIDENCE = 0.6
+        # confidence level of interval; higher confidence leads to more completed trades with smaller profit per trade
+        self._CONFIDENCE = 0.4
         # number of state refreshes which one position persists for
         self._ORDER_REFRESH_INTERVAL = 8
         # PERFORMANCE
@@ -107,7 +107,6 @@ class DSBot(Agent):
         if len(self._own_orders) > 0:
             # increment order age, and purge nonexistent orders
             new_order_age = {}
-            # THIS CODE DOESN'T WORK FOR MULTIPLE SAME-PRICE ORDERS: FLEXEMARKETS STACKS MULTIPLE ORDERS OF THE SAME PRICE AND GIVES IT A NEW REF
             for r, o in self._own_orders.items():
                 new_order_age[r] = self._order_age.get(r, 0) + 1
             self._order_age = new_order_age
@@ -160,7 +159,7 @@ class DSBot(Agent):
             self._evol = (self._MAX_MKT_PRICE - 1) ** 2
         
         # CI based on Student t distribution
-        return t.interval(self._CONFIDENCE, int(round(n)), self._eprice, self._evol**0.5)
+        return t.interval(1-self._CONFIDENCE, int(round(n)), self._eprice, self._evol**0.5)
 
     def check_order_validity(self, order, profit):
         # order validity (profitable and sufficient capital)
