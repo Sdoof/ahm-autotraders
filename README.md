@@ -38,3 +38,4 @@ And σ is the rooted [EWMA](https://financetrain.com/calculate-historical-volati
 Assuming no shocks occur, this produces a reasonable estimate of the asset's price in the near future. The lower/higher value of the interval is then used as the price of the buy/sell order.
 
 #### Multi-market statistical arbitrage bot
+Optimises expected payoff at any given level of risk tolerance.
