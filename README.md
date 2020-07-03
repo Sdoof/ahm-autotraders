@@ -3,6 +3,7 @@ Single-asset arbitrage, noise trading, and multi-market statistical arbitrage bo
 
 ## Depdendencies
 
+- numpy
 - Nitin Yadav's Python API for Flexemarkets
 - AdHocMarkets account
 
@@ -35,3 +36,5 @@ And σ is the rooted [EWMA](https://financetrain.com/calculate-historical-volati
 <img src="https://latex.codecogs.com/gif.latex?\sigma_n=\sqrt{\frac{1}{m}\sum^m_{i=1}u^2_{n-i}}"/>
 
 Assuming no shocks occur, this produces a reasonable estimate of the asset's price in the near future. The lower/higher value of the interval is then used as the price of the buy/sell order.
+
+#### Multi-market statistical arbitrage bot
