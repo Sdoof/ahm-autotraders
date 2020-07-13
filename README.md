@@ -44,4 +44,4 @@ A default scoring function is implemented, which scores based on expected payoff
 
 Each interval, for each in-universe market, the bot discovers the buy/sell prices that will lead to a portfolio score increase should an order execute at that price. The bot then creates buy/sell orders for all discovered prices, replacing existing orders if the price has changed.
 
-The bot serves the role of a market maker, publishing prices and maintaining prices for all assets across all markets, and benefitting if a trade is made at any of its given prices.
+The bot serves the role of a market maker, publishing and maintaining prices for all assets across all markets, and benefitting if a trade is made at any of its given prices.
